@@ -1,0 +1,147 @@
+body {
+    background-color: #E4E0E1;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 400px;
+    height: 350px;
+
+    border: none;
+    border-radius: 5%;
+
+
+    padding: 20px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 1px 1px 5px rgb(147, 143, 143);
+    transform: translate(-50%, -50%);
+    transition: height 0.5s;
+
+
+    font-size: 16px;
+
+}
+
+.after-login {
+    justify-content: flex-start;
+    height: 600px;
+}
+
+.topic {
+    text-align: center;
+
+    font-weight: 700;
+
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.input-label {
+    /* margin-left: 5em; */
+    align-self: flex-start;
+}
+
+.input {
+    display: block;
+    width: 20em;
+    height: 2em;
+
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.input-error-label {
+    color: red;
+    font-size: 1em;
+    display: none;
+    margin-bottom: 0.5em;
+}
+
+.password-visibility {
+    display: flex;
+    justify-content: center;
+}
+
+.role-container {
+    display: flex;
+    width: 280px;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.role-container label {
+    margin-right: 6px;
+}
+
+.role-selector {
+    border-radius: 1em;
+    width: 10em;
+    text-align: center;
+
+}
+
+.submit-button {
+    margin: 1em;
+    width: 12em;
+    height: 2.5em;
+
+    border: none;
+    border-radius: 20px;
+}
+
+
+
+.submit-button:hover {
+    background-color: rgb(137, 131, 131);
+}
+
+.container {
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear, opacity 0.7s linear;
+}
+
+#id-container {
+    flex: 1;
+    flex-direction: column;
+    height: 15em;
+
+}
+
+#id-info {
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+
+    padding: 0px 20px 40px 20px;
+}
+
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+}
