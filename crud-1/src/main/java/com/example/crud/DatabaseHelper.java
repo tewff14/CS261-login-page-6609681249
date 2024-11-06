@@ -30,7 +30,4 @@ public class DatabaseHelper {
         return (lastIndex != null) ? lastIndex : 0L;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Last inserted index: " + getLastIndex());
-    }
 }

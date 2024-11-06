@@ -1,9 +1,9 @@
 package com.example.crud;
 
-import com.example.crud.Account;
+import com.example.crud.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AccountRepository extends JpaRepository<Account, Long> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 }

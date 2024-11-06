@@ -10,14 +10,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "accounts")
-public class Account {
-
-	// static long lastID = 0;
-
-	// public static void setLastID() {
-	// lastID++;
-	// }
+@Table(name = "students")
+public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
