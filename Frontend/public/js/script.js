@@ -52,6 +52,7 @@ async function call_REST_API_Hello() {
         .then(text => {
             if (text.status === true) {
                 if (inputRole.value === "student") {
+                    // passwordForSave = text.password;
                     fetch(`https://restapi.tu.ac.th/api/v2/profile/std/info/?id=${text.username}`, {
                         method: "GET",
                         headers: {
@@ -72,9 +73,30 @@ async function call_REST_API_Hello() {
 
                                 document.querySelector(".login-container").classList.add("after-login");
                                 document.querySelector("#id-container").classList.add("visible");
+
+                                fetch("http://localhost:8080/api/students/add", {
+                                    method: "POST",
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        "engName": `${text.data.displayname_en}`,
+                                        "email": `${text.data.email}`,
+                                        "faculty": `${text.data.faculty}`,
+                                        "type": `${text.data.type}`,
+                                        "userName": `${text.data.userName}`,
+                                        "password": `${password}`
+
+                                    })
+                                });
+
+
+
                             } else {
                                 displayID.innerHTML = "";
-                                alert(text.message);
+                                // alert(text.message);
+                                alert("Error ไม่สามารถ Login ได้สำเร็จ");
 
                                 document.querySelector("#id-container").classList.remove("visible");
                                 document.querySelector(".login-container").classList.remove("after-login");
@@ -83,6 +105,7 @@ async function call_REST_API_Hello() {
                         })
                         .catch(e => {
                             console.error(e)
+                            alert("Error ไม่สามารถ Login ได้สำเร็จ");
                             displayID.innerHTML = "";
 
                             document.querySelector("#id-container").classList.remove("visible");
@@ -131,13 +154,18 @@ async function call_REST_API_Hello() {
 
                 console.log(text);
                 displayID.innerHTML = "";
-                alert(text.message);
+                // alert(text.message);
+                alert("Error ไม่สามารถ Login ได้สำเร็จ");
 
                 document.querySelector("#id-container").classList.remove("visible");
                 document.querySelector(".login-container").classList.remove("after-login");
             }
         })
-        .catch(e => console.error(e));
+        .catch(e => {
+            console.error(e)
+            alert("Error ไม่สามารถ Login ได้สำเร็จ")
+
+        });
 
 }
 
